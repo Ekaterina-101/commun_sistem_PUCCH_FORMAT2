@@ -4,7 +4,6 @@
 #include <array>
 #include <vector>
 
-extern int COUNTER_ERRORS;
 extern std::vector<std::vector<int>> CODE_WORDS;
 constexpr int RM_K = 13;
 constexpr int RM_N = 20;

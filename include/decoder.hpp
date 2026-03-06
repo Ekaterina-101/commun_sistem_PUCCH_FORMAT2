@@ -3,8 +3,8 @@
 
 #include "global_variables.hpp"
 #include <complex>
-#include <iostream>
 #include <vector>
+#include "utils.hpp"
 
 std::vector<int> decoder_RM(std::vector<double> &input_LLR, int k);
 
