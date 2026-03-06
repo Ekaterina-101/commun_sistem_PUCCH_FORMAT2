@@ -1,6 +1,13 @@
 #include "QPSK.hpp"
 
 std::vector<std::complex<double>> QPSKmod(std::vector<int> input_bits) {
+    if (input_bits.empty()) {
+        throw std::invalid_argument("QPSKmod: input bits vector is empty");
+    }
+    if (input_bits.size() % 2 != 0) {
+        throw std::invalid_argument("QPSKmod: input bits size must be even");
+    }
+
 	std::vector<std::complex<double>> modulated_signal(input_bits.size() / 2);
 
 	for (std::size_t i = 0, j = 0; i < input_bits.size(); i += 2, j++) {
@@ -14,6 +21,9 @@ std::vector<std::complex<double>> QPSKmod(std::vector<int> input_bits) {
 std::vector<double>
 QPSKdemod_soft(const std::vector<std::complex<double>> &input_signal,
 			   double Es_N0) {
+    if (input_signal.empty()) {
+        throw std::invalid_argument("QPSKdemod_soft: input signal vector is empty");
+    }
 	std::vector<double> output_LLR(input_signal.size() * 2);
 	double disp = 0.5 * std::pow(10.0, -Es_N0 / 10.0);
 

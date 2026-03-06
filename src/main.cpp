@@ -71,6 +71,7 @@ int failed_trans(int k, double Es_N0, int iterations = 100000) {
 
 	return errors_word;
 }
+
 void BLER(double Es_N0_min = -6.0, double Es_N0_max = 6.0,
 		  double Es_N0_step = 0.5, int iterations = 100000,
 		  std::string output_file = "data/BLER_data.txt") {
